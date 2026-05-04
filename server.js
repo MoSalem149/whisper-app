@@ -12,6 +12,7 @@ import questionRoutes from "./routes/questionRoutes.js";
 import feedRoutes from "./routes/feedRoutes.js";
 
 dns.setServers(["1.1.1.1", "8.8.8.8"]);
+process.env.NODE_OPTIONS = "--dns-result-order=ipv4first";
 
 const app = express();
 app.set("trust proxy", 1);
