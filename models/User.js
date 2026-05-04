@@ -55,7 +55,6 @@ userSchema.set("toJSON", {
     delete ret._id;
     delete ret.passwordHash;
     return ret;
-    // throw new Error('not implemented');
   },
 });
 
@@ -63,14 +62,12 @@ userSchema.methods.comparePassword = function (plain) {
   // TODO:
   // Hint: bcrypt.compare(plain, this.passwordHash) — returns a Promise<boolean>.
   return bcrypt.compare(plain, this.passwordHash);
-  // throw new Error("not implemented");
 };
 
 userSchema.statics.hashPassword = function (plain) {
   // TODO:
   // Hint: bcrypt.hash(plain, 10). Cost 10 is a reasonable default.
   return bcrypt.hash(plain, 10);
-  // throw new Error("not implemented");
 };
 
 export const User = mongoose.model("User", userSchema);

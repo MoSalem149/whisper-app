@@ -1,5 +1,3 @@
-import { HttpError } from "./errorHandler.js";
-
 export const validate = (schema) => (req, res, next) => {
   // TODO:
   // Hint: schema.safeParse(req.body). On failure: 400 with { error: { message, details } }.
@@ -7,19 +5,13 @@ export const validate = (schema) => (req, res, next) => {
   const result = schema.safeParse(req.body);
 
   if (!result.success) {
-    return next(
-      new HttpError(
-        400,
-        "Validation failed",
-        result.error.issues.map((issue) => ({
-          path: issue.path.join("."),
-          message: issue.message,
-        })),
-      ),
-    );
+    return res.status(400).json({
+      error: {
+        message: "Validation failed",
+        details: result.error.issues,
+      },
+    });
   }
-
   req.body = result.data;
   next();
-  // throw new Error("not implemented");
 };
