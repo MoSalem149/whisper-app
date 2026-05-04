@@ -1,7 +1,7 @@
 {
   "deploy": {
-    "org": "mosaleh-dev",
-    "app": "whisper"
+    "org": "mosalem-dev",
+    "app": "whisper",
+    "entrypoint": "server.js"
   }
 }
-
