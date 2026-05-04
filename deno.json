@@ -1,8 +1,0 @@
-{
-    "nodeModulesDir": "auto",
-    "deploy": {
-        "org": "mosalem149",
-        "app": "whisper-app",
-        "entrypoint": "server.js"
-    }
-}

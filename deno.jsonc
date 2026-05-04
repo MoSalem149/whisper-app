@@ -1,0 +1,6 @@
+{
+    "deploy": {
+        "org": "mosalem149",
+        "app": "whisper-app"
+    }
+}
