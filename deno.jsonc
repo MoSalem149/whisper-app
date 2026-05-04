@@ -1,7 +1,0 @@
-{
-  "deploy": {
-    "org": "mosalem-dev",
-    "app": "whisper"
-  }
-}
-
